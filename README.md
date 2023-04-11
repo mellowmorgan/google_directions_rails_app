@@ -21,8 +21,8 @@
 
 |Usage | METHOD       | URL       | Params |
 | :--------|:------------| :---------| :------|
-|See all rides for a given driver (paginated) | GET    | `localhost:3000/api/v1/dogs?page=PAGE_NUMBER&limit=PER_PAGE` |
-|See all rides for a given driver (unpaginated) | GET    | `localhost:3000/api/v1/drivers/:id` | 
+|See all rides for a given driver (paginated) | GET    | `localhost:3000/drivers/:id?page=PAGE_NUMBER&limit=PER_PAGE` | id, page, limit |
+|See all rides for a given driver (unpaginated) | GET    | `localhost:3000/drivers/:id` | id |
 
 
 ## Sample Response
