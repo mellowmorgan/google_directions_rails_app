@@ -15,6 +15,7 @@ class DriversController < ApplicationController
       sorted_rides = sort_by_score(driver_rides).paginate(page: params[:page], per_page: params[:limit])
       render status: 200, json: {
         driver_id: driver.id,
+        driver_home_address: driver.home_address,
         rides: sorted_rides
       }.to_json.camelcase
     end
