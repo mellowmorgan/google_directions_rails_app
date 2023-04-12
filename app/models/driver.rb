@@ -7,11 +7,11 @@ class Driver < ApplicationRecord
       start_address = ride.start_address
       end_address = ride.end_address
 
-      commute_distance, commute_duration = directions_api.dummy_data(home_address, start_address).values_at(:distance, :duration)
+      commute_distance, commute_duration = directions_api.get_maps_info(home_address, start_address).values_at(:distance, :duration)
       
       # Assuming database has been updated recently and has those values, use database and not api
       if ride.distance.nil? || ride.duration.nil? || (ride.duration.present? && ride.distance.present? && ride.updated_at < 2.minutes.ago)
-        ride_distance, ride_duration = directions_api.dummy_data(start_address, end_address).values_at(:distance, :duration)
+        ride_distance, ride_duration = directions_api.get_maps_info(start_address, end_address).values_at(:distance, :duration)
         ride.update!(duration: ride_duration, distance: ride_distance)
       else
         ride_distance = ride.distance
