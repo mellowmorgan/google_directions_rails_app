@@ -1,3 +1,9 @@
+# HopSkip Rails API
+
+## About
+
+API for HopSkipDrive Rails Assessment (I hope I win!!). Just one endpoint for getting rides for a driver sorted by score (highest first) using Google Directions API.
+
 ## Technologies Used
 
 * Rails 7
@@ -15,7 +21,7 @@
       `rake db:setup`
 * Run local server rails s
 * Run tests with command bundle exec rspec spec/requests/driver_spec.rb
-* Go to url such as "localhost:3000/driver/1" 
+* Go to url "localhost:3000/driver/1" 
 
 ## Endpoints Drivers Api
 
