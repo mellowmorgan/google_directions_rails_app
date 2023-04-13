@@ -4,4 +4,5 @@ Rails.application.routes.draw do
   # Defines the root path route ("/")
   # root "articles#index"
   resources :drivers, only: [:show]
+  match '*unmatched', to: 'application#not_found_method', via: :all
 end

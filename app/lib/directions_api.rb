@@ -9,12 +9,14 @@ class DirectionsApi
     destination = url_encode(destination)
     url = "#{RESOURCE}origin=#{origin}&destination=#{destination}&key=#{GOOGLE_DIRECTIONS_API_KEY}"
     response = RestClient::Request.execute(method: :get, url: url)
+    raise if response.code != 200
     if response.body.present?
       body = JSON.parse(response.body)
       # response is {"text"=>"45 mins", "value"=>2679} convert to hours
       # response is {"text"=>"35.1 mi", "value"=>56518} # strip out mi
       distance = body.dig('routes',0,'legs',0,'distance','text')
       duration = body.dig('routes',0,'legs',0,'duration','text')
+      raise if body['status'] == "NOT_FOUND"
       {
         distance: convert_google_distance(distance),
         duration: convert_google_duration(duration)
