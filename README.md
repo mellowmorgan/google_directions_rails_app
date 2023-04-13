@@ -20,7 +20,7 @@ API for HopSkipDrive Rails Assessment (I hope I win!!). Just one endpoint for ge
 * To create a database and seed, type in your terminal (will also seed test database for rspec): 
       `rake db:setup`
 * Run local server rails s
-* Run tests with command bundle exec rspec spec/requests/driver_spec.rb
+* Run tests with command bundle exec rspec
 * Go to url "localhost:3000/driver/1" 
 
 ## Endpoints Drivers Api
@@ -45,7 +45,7 @@ Expect the response for above endpoints to look like...
       "rideScore": 1009.87,
       "rideEarnings": "$2120.73",
       "rideDistance": "157.6 mi",
-      "rideDurations": "0.3 hr",
+      "rideDuration": "0.3 hr",
       "rideStartAddress": "1533 Sunset Blvd, Los Angeles, CA 90026",
       "rideEndAddress": "453 South Spring Street Ground Floor, 121 E 5th St SUITE 505, Los Angeles, CA 90013"
     }]
@@ -57,4 +57,5 @@ Expect the response for above endpoints to look like...
 | Status Code | Description |
 | :--- | :--- |
 | 200 | `OK` |
+| 400 | `BAD REQUEST` |
 | 404 | `NOT FOUND` |
