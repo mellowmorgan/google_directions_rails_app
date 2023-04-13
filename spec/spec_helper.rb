@@ -15,7 +15,9 @@
 # See https://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
 RSpec.configure do |config|
   config.before(:suite) do
-    Rails.application.load_seed # loading seeds
+    Ride.delete_all
+    Driver.delete_all
+    Rails.application.load_seed # reloading seeds
   end
   # rspec-expectations config goes here. You can use an alternate
   # assertion/expectation library such as wrong or the stdlib/minitest

@@ -1,4 +1,5 @@
 class Driver < ApplicationRecord
+  validates :home_address, presence: true
   def get_all_rides_scores
     rides = Ride.all
     driver_rides = []
@@ -25,7 +26,7 @@ class Driver < ApplicationRecord
         ride_score: score,
         ride_earnings: '$' + earnings.round(2).to_s,
         ride_distance: ride_distance.to_s + ' mi',
-        ride_durations: ride_duration.to_s + ' hr',
+        ride_duration: ride_duration.to_s + ' hr',
         ride_start_address: start_address,
         ride_end_address: end_address
     }
