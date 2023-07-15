@@ -2,7 +2,7 @@
 
 ## About
 
-API for HopSkipDrive Rails Assessment (I hope I win!!). Just one endpoint for getting rides for a driver sorted by score (highest first) using Google Directions API.
+Just one endpoint for getting rides for a driver sorted by score (highest first) using Google Directions API.
 
 ## Technologies Used
 
