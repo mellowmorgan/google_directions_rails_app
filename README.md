@@ -1,4 +1,4 @@
-# HopSkip Rails API
+# Google Directions Ride Rails API
 
 ## About
 
