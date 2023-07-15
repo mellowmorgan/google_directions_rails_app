@@ -4,6 +4,8 @@
 
 Just one endpoint for getting rides for a driver sorted by score (highest first) using Google Directions API.
 
+**API ACCESS TO GOOGLE DIRECTIONS EXPIRED, OAUTH TOKEN NO LONGER IN USE**
+
 ## Technologies Used
 
 * Rails 7
